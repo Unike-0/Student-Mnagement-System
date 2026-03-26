@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Student Management System</title>
+    <link rel="stylesheet" href="css/mini1.css">
+
+    
+</head>
+<body>
+
+    <h1>Student Management System</h1>
+
+    <div class="form">
+        <input type="text" id="name" placeholder="Student Name">
+        <input type="text" id="roll" placeholder="Roll Number">
+        <button onclick="addStudent()">Add Student</button>
+    </div>
+
+    <table id="studentTable">
+        <tr>
+            <th>Name</th>
+
+            <th>Roll No</th>
+        </tr>
+    </table>
+
+    <script>
+        function addStudent() {
+            var name = document.getElementById("name").value;
+            var roll = document.getElementById("roll").value;
+
+            if(name === "" || roll === "") {
+                alert("Please fill all fields");
+                return;
+            }
+
+            var table = document.getElementById("studentTable");
+            var row = table.insertRow();
+
+            row.insertCell(0).innerHTML = name;
+            row.insertCell(1).innerHTML = roll;
+
+            document.getElementById("name").value = "";
+            document.getElementById("roll").value = "";
+        }
+    </script>
+
+</body>
+</html>
